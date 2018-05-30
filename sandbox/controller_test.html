@@ -8,9 +8,17 @@
   </head>
   <body>
     <div ng-app="myApp">
+
       <div ng-controller="FirstCtrl">
-        <h1>{{data.message + " World"}}</h1>
+        <input type="text" ng-model="data.message" />
+        <h1>{{data.message}}</h1>
       </div>
+
+      <div ng-controller="SecondCtrl">
+        <input type="text" ng-model="data.message" />
+        <h1>{{data.message | reverse}}</h1>
+      </div>
+
     </div>
   </body>
 </html>

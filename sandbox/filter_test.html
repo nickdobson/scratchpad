@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular JS Controllers Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="filter_test.js"></script>
+  </head>
+  <body>
+    <div ng-app="filterApp">
+      <div ng-controller="PeopleCtrl">
+        <b>Search for a name: </b><input type="text" ng-model="search.name">
+        <br / />
+        <b>Search for a position: </b><input type="text" ng-model="search.position">
+        <br />
+        <b>Search for anything: </b><input type="text" ng-model="search.$">
+        <table style="margin-top: 20px">
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+          </tr>
+          <tr ng-repeat="person in people.software | filter:search">
+            <td style="padding: 10px">{{person.name}}</td>
+            <td>{{person.position}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

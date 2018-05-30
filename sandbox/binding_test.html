@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="">
+  <head>
+    <title>AngularJS Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  </head>
+  <body ng-init="names = [{name:'Andrew', city: 'Baltimore'}, {name:'Nick', city: 'Ellicott City'}, {name:'Joe', city: 'Frostberg'}]">
+        Name:
+        <br />
+        <input type="text" ng-model="name" /> {{ name }}
+        <br />
+        <ul>
+          <li ng-repeat="cust in names | filter:name | orderBy:'city'">{{ cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+        </ul>
+  </body>
+</html>
